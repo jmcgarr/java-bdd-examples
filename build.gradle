@@ -13,7 +13,7 @@ dependencies {
     groovy "org.codehaus.groovy:groovy:1.8.2"
 
     def gebVersion = '0.6.0'
-    def seleniumVersion = '2.0rc3'
+    def seleniumVersion = '2.6.0'
 
     testCompile "org.codehaus.geb:geb-spock:$gebVersion"
     testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
