@@ -22,5 +22,5 @@ dependencies {
 }
 
 test {
-    systemProperties "geb.build.reportingDir": "$reportsDir/geb"
+    systemProperties "geb.build.reportsDir": "$reportsDir/geb"
 }
