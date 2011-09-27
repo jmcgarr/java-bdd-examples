@@ -1,0 +1,22 @@
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+configurations {
+    testCompile.transitive = true
+}
+
+dependencies {
+    groovy "org.codehaus.groovy:groovy:1.8.2"
+
+    def gebVersion = '0.6.0'
+    def seleniumVersion = '2.6.0'
+
+    testCompile "org.codehaus.geb:geb-spock:$gebVersion"
+    testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
+    testCompile "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion"
+    testCompile "junit:junit:4.8.1"
+}
+
+test {
+    systemProperties "geb.build.reportsDir": "$reportsDir/geb"
+}
