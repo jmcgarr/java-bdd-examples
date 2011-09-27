@@ -11,6 +11,6 @@ class AmazonHomePage extends Page {
          searchForm { $("form", name: "site-search") }
          keywords { $("input", name: "field-keywords") }
          //searchBy { $("select", name: "url") }
-         searchButton { $("input", alt="Go" ) }
+         searchButton { $("input", alt: "Go" ) }
      }
 }

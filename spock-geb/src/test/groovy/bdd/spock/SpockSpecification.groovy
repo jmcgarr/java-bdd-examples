@@ -32,12 +32,12 @@ class SearchForBookByTitleSpec extends GebReportingSpec {
         expect:
         at AmazonHomePage
 
-        //when: "I search for 'Game of Thrones'"
-        //search.keywords.value('Game of Thrones')
-        //searchButton.click()
+        when: "I search for 'Game of Thrones'"
+        keywords.value('Game of Thrones')
+        searchButton.click()
 
-        //then: "a list of books is displayed"
-        //at AmazonResultsPage
+        then: "a list of books is displayed"
+        at AmazonResultsPage
 
         //and: "the 'Game of Thrones' is displayed first"
     }
