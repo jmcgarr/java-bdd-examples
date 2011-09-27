@@ -8,9 +8,9 @@ class AmazonHomePage extends Page {
     static at = { title == "Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more" }
 
      static content = {
-         search { $("form", name: "site-search") }
+         searchForm { $("form", name: "site-search") }
          keywords { $("input", name: "field-keywords") }
          //searchBy { $("select", name: "url") }
-         //search { $("input", ) }
+         searchButton { $("input", alt="Go" ) }
      }
 }
