@@ -10,6 +10,6 @@ class AmazonResultsPage extends Page {
     static content = {
 
         results { $("div", id: "atfResults") }
-        topResult { $() }
+        topResultTitle { $("div#result_0 div.data div.title a").text() }
     }
 }

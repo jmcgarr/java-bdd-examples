@@ -39,6 +39,7 @@ class SearchForBookByTitleSpec extends GebReportingSpec {
         then: "a list of books is displayed"
         at AmazonResultsPage
 
-        //and: "the 'Game of Thrones' is displayed first"
+        and: "the 'Game of Thrones' is displayed first"
+        topResultTitle.contains "Game of Thrones"
     }
 }
