@@ -40,6 +40,6 @@ class SearchForBookByTitleSpec extends GebReportingSpec {
         at AmazonResultsPage
 
         and: "the 'Game of Thrones' is displayed first"
-        topResultTitle.contains "Game of Thrones"
+        topResultTitle.contains "A Game of Thrones, A Clash of Kings, A Storm of Swords, and A Feast for Crows (A Song of Ice and Fire)"
     }
 }
