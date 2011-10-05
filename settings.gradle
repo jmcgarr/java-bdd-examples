@@ -1,1 +1,1 @@
-include 'spock-geb'
+include 'spock-geb', 'easyb-geb'

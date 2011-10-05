@@ -1,0 +1,37 @@
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+
+configurations {
+    testCompile.transitive = true
+}
+
+dependencies {
+    groovy "org.codehaus.groovy:groovy:1.8.2"
+
+    def gebVersion = '0.6.0'
+    def seleniumVersion = '2.6.0'
+
+    testCompile "org.codehaus.geb:geb-core:$gebVersion"
+    testCompile "org.codehaus.geb:geb-easyb:$gebVersion"
+    testCompile "org.easyb:easyb:0.9.8"
+    testCompile "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion"
+}
+
+test {
+    systemProperties "geb.build.reportsDir": "$reportsDir/geb"
+}
+
+test.doLast  {
+
+    ant.taskdef(name: "easyb", classname:"org.easyb.ant.BehaviorRunnerTask", classpath: sourceSets.test.runtimeClasspath.asPath)
+
+    ant.easyb( classpath: sourceSets.test.runtimeClasspath.asPath, failureProperty:'easyb_failed' ) {
+        report( location:"${project.testResultsDir}/story.txt", format:"txtstory" )
+        behaviors( dir: "src/test/stories" ) {
+            include( name:"**/*.story" )
+        }
+   }
+
+    ant.fail( if:'easyb_failed', message: 'Failures in easyb stories' )
+}
